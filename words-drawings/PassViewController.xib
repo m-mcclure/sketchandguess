@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Avenir.ttc">
+            <string>Avenir-Book</string>
+            <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassViewController">
+            <connections>
+                <outlet property="button" destination="K2B-iM-A3K" id="MgS-Ec-xNi"/>
+                <outlet property="view" destination="6QB-TG-fo6" id="2Qf-b3-gY8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6QB-TG-fo6">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ua-5z-bdY">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next player ready?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-GP-WPQ">
+                            <rect key="frame" x="148" y="277.5" width="303" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="FcA-Gi-IvZ"/>
+                                <constraint firstAttribute="height" constant="49" id="GTQ-PS-daz"/>
+                                <constraint firstAttribute="height" constant="45" id="cSQ-OW-ubZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="36"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="FcA-Gi-IvZ"/>
+                                    <exclude reference="GTQ-PS-daz"/>
+                                </mask>
+                            </variation>
+                            <variation key="widthClass=regular">
+                                <mask key="constraints">
+                                    <exclude reference="FcA-Gi-IvZ"/>
+                                </mask>
+                            </variation>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pass the device to the next player." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lk-rD-lxg">
+                            <rect key="frame" x="27" y="231" width="547.5" height="49.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="w8j-Mx-yae"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="36"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="w8j-Mx-yae"/>
+                                </mask>
+                            </variation>
+                            <variation key="widthClass=regular">
+                                <mask key="constraints">
+                                    <exclude reference="w8j-Mx-yae"/>
+                                </mask>
+                            </variation>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2B-iM-A3K">
+                            <rect key="frame" x="275" y="330" width="50" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="B2d-g2-mcV"/>
+                                <constraint firstAttribute="height" constant="80" id="qVr-Dh-nIQ">
+                                    <variation key="widthClass=regular" constant="72"/>
+                                </constraint>
+                                <constraint firstAttribute="height" constant="60" id="vQM-s6-sSq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="36"/>
+                            <state key="normal" title="Go">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="qVr-Dh-nIQ"/>
+                                    <exclude reference="vQM-s6-sSq"/>
+                                </mask>
+                            </variation>
+                            <variation key="widthClass=regular">
+                                <mask key="constraints">
+                                    <exclude reference="qVr-Dh-nIQ"/>
+                                    <exclude reference="vQM-s6-sSq"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="button:" destination="-1" eventType="touchUpInside" id="704-Bm-c6g"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="S5a-GP-WPQ" firstAttribute="centerY" secondItem="3ua-5z-bdY" secondAttribute="centerY" id="IbM-AI-zJp"/>
+                        <constraint firstItem="K2B-iM-A3K" firstAttribute="centerX" secondItem="3ua-5z-bdY" secondAttribute="centerX" id="Ikl-H3-DJL"/>
+                        <constraint firstItem="S5a-GP-WPQ" firstAttribute="centerX" secondItem="3ua-5z-bdY" secondAttribute="centerX" id="QbK-Qh-Tve"/>
+                        <constraint firstItem="K2B-iM-A3K" firstAttribute="top" secondItem="S5a-GP-WPQ" secondAttribute="bottom" constant="7.5" id="U5H-oO-Ht4"/>
+                        <constraint firstItem="S5a-GP-WPQ" firstAttribute="top" secondItem="3ua-5z-bdY" secondAttribute="top" constant="255" id="WOB-CB-WmO"/>
+                        <constraint firstItem="2lk-rD-lxg" firstAttribute="centerX" secondItem="3ua-5z-bdY" secondAttribute="centerX" id="l6G-O8-MTT"/>
+                        <constraint firstItem="S5a-GP-WPQ" firstAttribute="top" secondItem="2lk-rD-lxg" secondAttribute="bottom" constant="-3" id="vMa-gq-gUB"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="WOB-CB-WmO"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3ua-5z-bdY" firstAttribute="leading" secondItem="6QB-TG-fo6" secondAttribute="leading" id="CO4-sf-ER0"/>
+                <constraint firstItem="3ua-5z-bdY" firstAttribute="top" secondItem="6QB-TG-fo6" secondAttribute="top" id="Gw7-9F-JAI"/>
+                <constraint firstItem="3ua-5z-bdY" firstAttribute="leading" secondItem="6QB-TG-fo6" secondAttribute="leadingMargin" constant="-8" id="HSg-yh-Sio"/>
+                <constraint firstItem="3ua-5z-bdY" firstAttribute="top" secondItem="6QB-TG-fo6" secondAttribute="topMargin" constant="-8" id="KAf-r4-pa3"/>
+                <constraint firstItem="3ua-5z-bdY" firstAttribute="leading" secondItem="6QB-TG-fo6" secondAttribute="leading" id="MC6-iQ-BaM"/>
+                <constraint firstAttribute="trailing" secondItem="3ua-5z-bdY" secondAttribute="trailing" id="NRI-wg-DMy"/>
+                <constraint firstAttribute="trailingMargin" secondItem="3ua-5z-bdY" secondAttribute="trailing" constant="-8" id="Vqv-Ws-o2f"/>
+                <constraint firstAttribute="trailing" secondItem="3ua-5z-bdY" secondAttribute="trailing" id="ajL-xY-dWb"/>
+                <constraint firstItem="3ua-5z-bdY" firstAttribute="top" secondItem="6QB-TG-fo6" secondAttribute="top" id="cJB-rw-4e0"/>
+                <constraint firstItem="3ua-5z-bdY" firstAttribute="centerY" secondItem="6QB-TG-fo6" secondAttribute="centerY" id="fdK-i3-Ivx"/>
+                <constraint firstAttribute="bottom" secondItem="3ua-5z-bdY" secondAttribute="bottom" id="itd-me-wGc"/>
+                <constraint firstAttribute="bottom" secondItem="3ua-5z-bdY" secondAttribute="bottom" id="sgz-Md-gAe"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
