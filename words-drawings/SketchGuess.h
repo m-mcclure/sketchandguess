@@ -11,6 +11,7 @@
 #import "Sketch.h"
 #import "Guess.h"
 
+
 @interface SketchGuess : NSObject
 @property (strong, nonatomic) Sketch *sketch;
 @property (strong, nonatomic) Guess *guess;
