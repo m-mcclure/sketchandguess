@@ -27,17 +27,14 @@
 @property (strong, nonatomic) NSString *selectedOption;
 
 @property (strong,nonatomic) NSMutableArray *filmAndTVArray;
-@property (strong,nonatomic) NSMutableArray *tvArray;
-@property (strong,nonatomic) NSMutableArray *theatreArray;
 @property (strong,nonatomic) NSMutableArray *musicArray;
 @property (strong,nonatomic) NSMutableArray *sportsArray;
 @property (strong,nonatomic) NSMutableArray *historyArray;
 @property (strong,nonatomic) NSMutableArray *scienceArray;
-//@property (strong,nonatomic) NSMutableArray *natureArray;
 @property (strong,nonatomic) NSMutableArray *geographyArray;
 @property (strong,nonatomic) NSMutableArray *theArtsArray;
-//@property (strong,nonatomic) NSMutableArray *literatureArray;
-//@property (strong,nonatomic) NSMutableArray *zanyMiscellanyArray;
+
+@property (strong,nonatomic) NSMutableArray *thisRoundsPromptsArray;
 
 - (IBAction)option1Pressed:(UIButton *)sender;
 - (IBAction)option2Pressed:(UIButton *)sender;
@@ -55,15 +52,13 @@
   [self.option3Button.titleLabel setTextAlignment:NSTextAlignmentCenter];
   [self.option4Button.titleLabel setTextAlignment:NSTextAlignmentCenter];
   NSLog(@"%ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
+    
+  self.thisRoundsPromptsArray = [[NSMutableArray alloc] init];
   
   NSLog(@"You chose... wisely: %@", self.chosenCategory);
   
   
-   _filmAndTVArray = [NSMutableArray arrayWithObjects: @"The Godfather", @"Woody Allen", @"Steven Spielberg", @"Rocky", @"Rushmore", @"Back to the Future II", @"Alice in Wonderland", @"Boogie Nights", @"Space Jam", @"Mission: Impossible", @"Annie Hall", @"Being John Malkovich", @"Metropolis", @"The Dark Crystal", @"Vertigo", @"Star Trek", @"Iron Man", @"Hannibal", @"Meet the Parents", @"Beetlejuice", @"Seinfeld", @"Gilligan's Island", @"Home Improvement", @"Arrested Development", @"Mork and Mindy", @"GI-Joe", @"Weeds", @"Lost", @"The Twilight Zone", @"24", @"House, M.D.", nil];
-   
-//   _tvArray = [NSMutableArray arrayWithObjects: @"Seinfeld", @"Gilligan's Island", @"Home Improvement", @"Arrested Development", @"Mork and Mindy", @"GI-Joe", @"Weeds", @"Lost", @"The Twilight Zone", @"24", @"House, M.D.", nil];
-//   
-   _theatreArray = [NSMutableArray arrayWithObjects: @"Death of a Salesman", @"Romeo and Juliet", @"The Book of Mormon", @"Titus Andronicus", @"Neil Patrick Harris", @"The Tony Awards", @"West Side Story", @"Hamlet", @"Stephen Sondheim", @"Jesus Christ Superstar", @"Cat On a Hot Tin Roof", @"Hairspray", @"Pirates of the Carribean", @"Mean Girls", @"Tim Burton", nil];
+   _filmAndTVArray = [NSMutableArray arrayWithObjects: @"The Godfather", @"Indiana Jones and The Last Crusade", @"Woody Allen", @"Steven Spielberg", @"Rocky", @"Rushmore", @"Back to the Future II", @"Alice in Wonderland", @"Boogie Nights", @"Space Jam", @"Mission: Impossible", @"Annie Hall", @"Being John Malkovich", @"Metropolis", @"The Dark Crystal", @"Vertigo", @"Star Trek", @"Iron Man", @"Hannibal", @"Meet the Parents", @"Beetlejuice", @"Seinfeld", @"Gilligan's Island", @"Home Improvement", @"Arrested Development", @"Mork and Mindy", @"GI-Joe", @"Weeds", @"Lost", @"The Twilight Zone", @"24", @"House, M.D.", nil];
    
    _musicArray = [NSMutableArray arrayWithObjects: @"Madonna", @"Beethoven", @"Heartbreak Hotel", @"U Can't Touch This", @"Thriller", @"The Sound of Silence", @"Glenn Gould", @"November Rain", @"Paranoid Android", @"Magical Mystery Tour", @"John Cage", @"Nirvana", @"Michael Jackson", @"Frank Sinatra", @"Katy Perry", @"Tiny Tim", @"Bohemian Rhapsody", @"Enya", @"California Girls", @"Linda McCartney", nil];
    
@@ -104,14 +99,35 @@
   } else if ([_chosenCategory isEqualToString:@"THE ARTS"]){
     _pickedObjects = _theArtsArray;
   }
+    
+
+    NSInteger j = [_pickedObjects count];
+    
+    //randomize category selections. will always display exactly 4 options.
+    int remaining = 4;
+    
+    if (_pickedObjects.count >= remaining) {
+        while (remaining > 0) {
+            NSInteger k = arc4random_uniform((u_int32_t)j) % j;
+            NSLog(@"k = %ld", (long)k);
+            
+            NSString *string = _pickedObjects[k];
+            NSLog(@"%@", string);
+            if (![_thisRoundsPromptsArray containsObject:string]){
+                [_thisRoundsPromptsArray addObject:string];
+                remaining--;
+            }
+        }
+    }
+    
   //set text on buttons
-  NSString *option1Text = (NSString *)[_pickedObjects objectAtIndex:0];
+  NSString *option1Text = (NSString *)[_thisRoundsPromptsArray objectAtIndex:0];
   [_option1Button setTitle: option1Text forState: UIControlStateNormal];
-  NSString *option2Text = (NSString *)[_pickedObjects objectAtIndex:1];
+  NSString *option2Text = (NSString *)[_thisRoundsPromptsArray  objectAtIndex:1];
   [_option2Button setTitle: option2Text forState: UIControlStateNormal];
-  NSString *option3Text = (NSString *)[_pickedObjects objectAtIndex:2];
+  NSString *option3Text = (NSString *)[_thisRoundsPromptsArray objectAtIndex:2];
   [_option3Button setTitle: option3Text forState: UIControlStateNormal];
-  NSString *option4Text = (NSString *)[_pickedObjects objectAtIndex:3];
+  NSString *option4Text = (NSString *)[_thisRoundsPromptsArray  objectAtIndex:3];
   [_option4Button setTitle: option4Text forState: UIControlStateNormal];
   
 

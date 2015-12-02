@@ -48,12 +48,12 @@
   
   NSInteger j = [_categoriesArray count];
   
-  NSLog(@"this round's array before: %lu", (unsigned long)_thisRoundsArray.count);
+  //randomize category selections. will always display 3 randomized options, plus DIY option.
   int remaining = 3;
   
   if (_categoriesArray.count >= remaining) {
     while (remaining > 0) {
-      NSInteger k = arc4random_uniform((u_int32_t)j) % 12;
+      NSInteger k = arc4random_uniform((u_int32_t)j) % 7;
       NSLog(@"k = %ld", (long)k);
       
       NSString *string = _categoriesArray[k];
