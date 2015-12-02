@@ -44,7 +44,7 @@
   
   _thisRoundsArray = [[NSMutableArray alloc] init];
   
-  _categoriesArray = [NSMutableArray arrayWithObjects: @"FILM", @"TV", @"THEATRE", @"MUSIC", @"SPORTS", @"HISTORY", @"SCIENCE", @"NATURE", @"GEOGRAPHY", @"ART", @"LITERATURE", @"ZANY MISCELLANY", nil];
+  _categoriesArray = [NSMutableArray arrayWithObjects: @"FILM & TV", @"MUSIC", @"SPORTS", @"HISTORY", @"SCIENCE", @"GEOGRAPHY", @"THE ARTS", @"ZANY MISCELLANY", nil];
   
   NSInteger j = [_categoriesArray count];
   
