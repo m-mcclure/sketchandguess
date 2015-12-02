@@ -44,7 +44,7 @@
   
   _thisRoundsArray = [[NSMutableArray alloc] init];
   
-  _categoriesArray = [NSMutableArray arrayWithObjects: @"FILM & TV", @"MUSIC", @"SPORTS", @"HISTORY", @"SCIENCE", @"GEOGRAPHY", @"THE ARTS", @"ZANY MISCELLANY", nil];
+  _categoriesArray = [NSMutableArray arrayWithObjects: @"FILM & TV", @"MUSIC", @"SPORTS", @"HISTORY", @"SCIENCE", @"GEOGRAPHY", @"THE ARTS", nil];
   
   NSInteger j = [_categoriesArray count];
   
@@ -111,7 +111,7 @@
   self.categoryPressed = _thisRoundsArray[1];
   NSLog(@"%@", self.categoryPressed);
   //[self selectArray:self.categoryPressed];
-  //self.selectedArray = _filmArray;
+  //self.selectedArray = _filmAndTVArray;
   //NSLog(@"ARRAY WAS>>> %@", self.selectedArray);
   [self performSegueWithIdentifier:@"ShowOptions" sender:self];
 }
@@ -119,7 +119,7 @@
   self.categoryPressed = _thisRoundsArray[2];
   NSLog(@"%@", self.categoryPressed);
   //[self selectArray:self.categoryPressed];
-  //self.selectedArray = _filmArray;
+  //self.selectedArray = _filmAndTVArray;
   //NSLog(@"ARRAY WAS>>> %@", self.selectedArray);
   [self performSegueWithIdentifier:@"ShowOptions" sender:self];
 }
