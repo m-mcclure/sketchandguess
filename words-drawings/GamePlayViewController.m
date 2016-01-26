@@ -13,6 +13,11 @@
 
 @interface GamePlayViewController ()
 
+@property (weak, nonatomic) NSTimer *timer;
+
+
+
+
 @property (weak, nonatomic) IBOutlet UIView *passItOnView;
 
 @property (weak, nonatomic) IBOutlet UILabel *passItOnLabel;
@@ -42,6 +47,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
     
     self.nextPlayerReadyStackView.hidden = YES;
     
@@ -88,8 +95,6 @@
     
     self.arrayOfSketchesAndGuesses = [[NSMutableArray alloc] init];
     
-    //set this for now, later it will come from other vc
-//    self.firstPrompt = @"this is the first prompt";
     
     [self.arrayOfSketchesAndGuesses addObject:self.firstPrompt];
     
@@ -110,10 +115,27 @@
 
 
 - (void)viewDidAppear:(BOOL)animated{
-
     
+
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
+
 }
 
+-(void)decrementTimeLabel:(NSTimer *)timer {
+    
+    NSInteger newTime = [self.timerLabel.text integerValue] -1;
+    NSString *newTimeString = [NSString stringWithFormat: @"%ld",(long)newTime];
+    self.timerLabel.text = newTimeString;
+    
+    if (newTime == 0) {
+        [timer invalidate];
+        [self timeIsUp];
+    }
+}
+
+-(void)stopTimer:(NSTimer *)timer {
+    [timer invalidate];
+}
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -152,13 +174,13 @@
         self.imageDescriptionTextField.hidden = NO;
         self.sketchImageView.hidden = NO;
         self.drawingPadView.hidden = YES;
-//        self.jotVC.view.hidden = YES;
 
     }
 }
 
 - (IBAction)doneButtonPressed:(UIButton *)sender {
 
+    
     
     if ((self.roundCount % 2 != 0) && [self.imageDescriptionTextField.text  isEqual: @""]) {
         //alert
@@ -179,8 +201,6 @@
                 //save what is in the drawing pad uiview as a uiimage
                 //but for now just save this
                 UIImage *savedImage = [self.jotVC renderImageWithScale:2.f onColor:self.view.backgroundColor];
-//                [self.jotVC clearAll];
-//                self.jotVC.view.hidden = YES;
                 
                 [self.arrayOfSketchesAndGuesses addObject:savedImage];
                 NSLog(@"array count: %lu", (unsigned long)self.arrayOfSketchesAndGuesses.count);
@@ -216,6 +236,8 @@
                 self.imageDescriptionTextField.text = @"";
                 self.roundCount++;
                 [self toggleRoundInterface];
+                [self stopTimer:self.timer];
+                [self resetTimer];
                 
             }];
             
@@ -225,7 +247,8 @@
         } else {
             
         }
-
+        
+        
     }
     
     
@@ -236,7 +259,10 @@
     
 }
 
-
+- (void)resetTimer {
+    NSString *durationToString = [NSString stringWithFormat: @"%ld", (long)self.durationOfRound];
+    self.timerLabel.text = durationToString;
+}
 
 
  #pragma mark - Navigation
@@ -274,11 +300,11 @@
              self.jotVC.view.hidden = NO;
              
          }
-//        self.passItOnLabel.hidden = NO;
-//        self.nextPlayerReadyStackView.hidden = YES;
+
     }completion:^(BOOL finished){
         self.passItOnLabel.hidden = NO;
         self.nextPlayerReadyStackView.hidden = YES;
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
     }];
     
 }
