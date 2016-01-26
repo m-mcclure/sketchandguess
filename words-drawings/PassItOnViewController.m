@@ -69,7 +69,7 @@
         gamePlayVC.durationOfRound = self.durationOfRound;
     }
     self.nextPlayerReadyStackView.hidden = YES;
-    self.passDeviceLabel.hidden = NO;
+//    self.passDeviceLabel.hidden = NO;
     self.passDetected = NO;
 }
 
