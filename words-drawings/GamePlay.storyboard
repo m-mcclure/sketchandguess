@@ -21,7 +21,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJe-Ch-325">
                                 <rect key="frame" x="0.0" y="150" width="600" height="450"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="draw the above prompt here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5v-EI-4fd">
+                                        <rect key="frame" x="279" y="215" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="V5v-EI-4fd" firstAttribute="centerX" secondItem="MJe-Ch-325" secondAttribute="centerX" id="57a-Sz-Lea"/>
+                                    <constraint firstItem="V5v-EI-4fd" firstAttribute="centerY" secondItem="MJe-Ch-325" secondAttribute="centerY" id="6eL-M7-BFl"/>
                                     <constraint firstAttribute="width" constant="600" id="Wi8-l6-XgS"/>
                                     <constraint firstAttribute="height" constant="484" id="uhI-sG-XFo"/>
                                 </constraints>
@@ -30,6 +41,9 @@
                                         <exclude reference="uhI-sG-XFo"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uNw-kT-Pc1" appends="YES" id="h07-4a-bjw"/>
+                                </connections>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XFN-9X-BaA">
                                 <rect key="frame" x="0.0" y="150" width="600" height="450"/>
@@ -180,6 +194,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="drawHereLabel" destination="V5v-EI-4fd" id="e45-nH-6MF"/>
                         <outlet property="drawingPadView" destination="MJe-Ch-325" id="Sxb-uJ-U4q"/>
                         <outlet property="imageDescriptionTextField" destination="kLU-Rd-oH9" id="dJe-Y7-Zql"/>
                         <outlet property="passItOnView" destination="Den-0F-dUr" id="yJe-SM-QPZ"/>
@@ -192,6 +207,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IF-dC-B5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="uNw-kT-Pc1"/>
             </objects>
             <point key="canvasLocation" x="519" y="236"/>
         </scene>

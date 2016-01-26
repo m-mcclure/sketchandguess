@@ -27,6 +27,9 @@
 @property NSInteger roundCount;
 @property NSMutableArray *arrayOfSketchesAndGuesses;
 
+@property (weak, nonatomic) IBOutlet UILabel *drawHereLabel;
+
+
 
 @end
 
@@ -90,6 +93,14 @@
     self.sketchImageView.hidden = YES;
     self.imageDescriptionTextField.hidden = YES;
 }
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"yah touch");
+    self.drawHereLabel.hidden = YES;
+
+
+}
+
 
 - (void)viewDidAppear:(BOOL)animated{
 //     if (self.roundCount % 2 == 0) {
