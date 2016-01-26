@@ -81,7 +81,7 @@
   NSLog(@"You chose... wisely: %@", self.chosenCategory);
   
   
-   self.filmAndTVArray = [NSMutableArray arrayWithObjects: @"Tangled", @"Forrest Gump", @"Spider-Man", @"Inception", @"Rocky", @"Rushmore", @"The Goonies", @"Alice in Wonderland", @"Toy Story", @"Space Jam", @"Taken", @"Monsters, Inc.", @"Being John Malkovich", @"Metropolis", @"The Dark Crystal", @"Star Trek", @"Iron Man", @"101 Dalmations", @"Beetlejuice", nil];
+   self.filmAndTVArray = [NSMutableArray arrayWithObjects: @"Tangled", @"Forrest Gump", @"Spider-Man", @"Inception", @"Rocky", @"Pulp Fiction", @"The Goonies", @"Alice in Wonderland", @"Toy Story", @"Space Jam", @"Taken", @"Monsters, Inc.", @"Being John Malkovich", @"Metropolis", @"The Dark Crystal", @"Star Trek", @"Iron Man", @"101 Dalmations", @"Beetlejuice", nil];
    
    self.peopleArray = [NSMutableArray arrayWithObjects: @"Madonna", @"Beethoven", @"Charlie Chaplin", @"Jim Carrey", @"Henry Ford", @"Houdini", @"Hillary Clinton", @"Weird Al", @"Albert Einstein", @"Mr. Rogers", @"John Cage", @"Cleopatra", @"Michael Jackson", @"Frank Sinatra", @"Katy Perry", @"Thomas Edison", @"Neil Armstrong", @"Elvis", @"Dr. Seuss", @"Linda McCartney", nil];
    
