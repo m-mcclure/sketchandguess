@@ -14,6 +14,11 @@
 @interface GamePlayViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *passItOnView;
+
+@property (weak, nonatomic) IBOutlet UILabel *passItOnLabel;
+@property (weak, nonatomic) IBOutlet UIStackView *nextPlayerReadyStackView;
+
+
 - (IBAction)hidePassItOnView:(UIButton *)sender;
 @property (nonatomic, strong) JotViewController *jotVC;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *passItOnViewTopConstraint;
@@ -37,6 +42,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.nextPlayerReadyStackView.hidden = YES;
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.view.bounds;
@@ -197,6 +204,13 @@
             [UIView animateWithDuration:0.5 animations:^{
 
                 self.passItOnViewTopConstraint.constant = 0;
+                
+                
+                //do 2 second delay here
+                [self performSelector:@selector(hideAndShowLabels)
+                           withObject:(self)
+                           afterDelay:(2)];
+                
                 [self.passItOnView layoutIfNeeded];
             } completion:^(BOOL finished){
                 self.imageDescriptionTextField.text = @"";
@@ -242,9 +256,16 @@
      }
      
  }
+
+-(void)hideAndShowLabels {
+    self.nextPlayerReadyStackView.hidden = NO;
+    self.passItOnLabel.hidden = YES;
+}
  
 
 - (IBAction)hidePassItOnView:(UIButton *)sender {
+    
+    
     
     [UIView animateWithDuration:0.6 animations:^{
         self.passItOnViewTopConstraint.constant = -1000;
@@ -253,6 +274,11 @@
              self.jotVC.view.hidden = NO;
              
          }
+//        self.passItOnLabel.hidden = NO;
+//        self.nextPlayerReadyStackView.hidden = YES;
+    }completion:^(BOOL finished){
+        self.passItOnLabel.hidden = NO;
+        self.nextPlayerReadyStackView.hidden = YES;
     }];
     
 }

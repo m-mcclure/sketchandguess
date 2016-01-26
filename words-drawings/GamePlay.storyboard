@@ -22,10 +22,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJe-Ch-325">
                                 <rect key="frame" x="0.0" y="150" width="600" height="450"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="draw the above prompt here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5v-EI-4fd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Draw the above prompt here, without using any words." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5v-EI-4fd">
                                         <rect key="frame" x="279" y="215" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -135,6 +135,12 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Den-0F-dUr">
                                 <rect key="frame" x="57" y="436" width="600" height="335"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pass the device to the next player." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80Z-8i-bgm">
+                                        <rect key="frame" x="279" y="157" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="o72-zk-aBp">
                                         <rect key="frame" x="230" y="52" width="301" height="101"/>
                                         <subviews>
@@ -160,6 +166,8 @@
                                 <color key="backgroundColor" red="0.65098039220000004" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="o72-zk-aBp" firstAttribute="centerY" secondItem="Den-0F-dUr" secondAttribute="centerY" id="93c-10-DrD"/>
+                                    <constraint firstItem="80Z-8i-bgm" firstAttribute="centerY" secondItem="Den-0F-dUr" secondAttribute="centerY" id="LuV-m7-rxB"/>
+                                    <constraint firstItem="80Z-8i-bgm" firstAttribute="centerX" secondItem="Den-0F-dUr" secondAttribute="centerX" id="UFa-F1-WeO"/>
                                     <constraint firstItem="o72-zk-aBp" firstAttribute="centerX" secondItem="Den-0F-dUr" secondAttribute="centerX" id="rBS-iO-r2X"/>
                                 </constraints>
                             </view>
@@ -197,6 +205,8 @@
                         <outlet property="drawHereLabel" destination="V5v-EI-4fd" id="e45-nH-6MF"/>
                         <outlet property="drawingPadView" destination="MJe-Ch-325" id="Sxb-uJ-U4q"/>
                         <outlet property="imageDescriptionTextField" destination="kLU-Rd-oH9" id="dJe-Y7-Zql"/>
+                        <outlet property="nextPlayerReadyStackView" destination="o72-zk-aBp" id="qZq-S8-iQH"/>
+                        <outlet property="passItOnLabel" destination="80Z-8i-bgm" id="S28-2O-YgT"/>
                         <outlet property="passItOnView" destination="Den-0F-dUr" id="yJe-SM-QPZ"/>
                         <outlet property="passItOnViewBottomConstraint" destination="iWq-8f-mRn" id="g4y-WY-uAO"/>
                         <outlet property="passItOnViewTopConstraint" destination="6XX-wi-gTb" id="DyA-GE-6B4"/>

@@ -27,7 +27,6 @@
 		3430FC061BA3A00D007C108D /* words_drawingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430FC051BA3A00D007C108D /* words_drawingsTests.m */; };
 		3430FC111BA3A00D007C108D /* words_drawingsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430FC101BA3A00D007C108D /* words_drawingsUITests.m */; };
 		3430FC231BA3A07C007C108D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430FC221BA3A07C007C108D /* MainViewController.m */; };
-		347685D41BB4700D00C58742 /* souvenirCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347685D31BB4700D00C58742 /* souvenirCell.xib */; };
 		347685DA1BB476BC00C58742 /* SouvenirCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 347685D91BB476BC00C58742 /* SouvenirCollectionViewCell.m */; };
 		347685DD1BB4A88300C58742 /* BetterInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347685DC1BB4A88300C58742 /* BetterInstructionsViewController.m */; };
 		3486387A1BA3CBC0001AA58D /* CustomPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348638791BA3CBC0001AA58D /* CustomPromptViewController.m */; };
@@ -90,7 +89,6 @@
 		3430FC121BA3A00D007C108D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3430FC211BA3A07C007C108D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3430FC221BA3A07C007C108D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		347685D31BB4700D00C58742 /* souvenirCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = souvenirCell.xib; sourceTree = "<group>"; };
 		347685D81BB476BC00C58742 /* SouvenirCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SouvenirCollectionViewCell.h; sourceTree = "<group>"; };
 		347685D91BB476BC00C58742 /* SouvenirCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SouvenirCollectionViewCell.m; sourceTree = "<group>"; };
 		347685DB1BB4A88300C58742 /* BetterInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetterInstructionsViewController.h; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 				172D2A051BB1180C00120637 /* PassViewController.xib */,
 				293118D31C531F9D00D1FB31 /* EndGameCell.xib */,
 				34A681F81BAF1C430053C9F0 /* BackgroundGradient.h */,
-				347685D31BB4700D00C58742 /* souvenirCell.xib */,
 				347685D81BB476BC00C58742 /* SouvenirCollectionViewCell.h */,
 				347685D91BB476BC00C58742 /* SouvenirCollectionViewCell.m */,
 				34A681F91BAF1C430053C9F0 /* BackgroundGradient.m */,
@@ -405,7 +402,6 @@
 				2957C53B1C56020D00999D67 /* AppIcon.appiconset in Resources */,
 				294B7A331C3B6C2300F61142 /* GamePlay.storyboard in Resources */,
 				17EBC0171BE452C800E9C83A /* Credits.storyboard in Resources */,
-				347685D41BB4700D00C58742 /* souvenirCell.xib in Resources */,
 				293118D41C531F9D00D1FB31 /* EndGameCell.xib in Resources */,
 				172D2A061BB1180C00120637 /* PassViewController.xib in Resources */,
 				3430FBF31BA3A00D007C108D /* Main.storyboard in Resources */,
