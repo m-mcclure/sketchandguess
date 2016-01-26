@@ -38,12 +38,9 @@
                                                                                                                                                             blue:71.0f/255.0f
                                                                                                                                                            alpha:1.0f] CGColor], nil];
     [self.view.layer insertSublayer:gradient atIndex:0];
-    //    CAGradientLayer *bg = [BackgroundGradient blueGradient];
-    //    bg.frame = self.view.bounds;
     
     gradient.locations = @[ @(0.11f), @(0.999f), @(1.0) ];
 
-    
     self.nextPlayerReadyStackView.hidden = YES;
     self.passDeviceLabel.hidden = NO;
     
@@ -69,7 +66,6 @@
         gamePlayVC.durationOfRound = self.durationOfRound;
     }
     self.nextPlayerReadyStackView.hidden = YES;
-//    self.passDeviceLabel.hidden = NO;
     self.passDetected = NO;
 }
 

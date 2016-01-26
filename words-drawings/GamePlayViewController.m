@@ -103,9 +103,7 @@
 
 
 - (void)viewDidAppear:(BOOL)animated{
-//     if (self.roundCount % 2 == 0) {
-//         self.jotVC.view.hidden = NO;
-//     }
+
     
 }
 
@@ -138,7 +136,7 @@
         self.imageDescriptionTextField.hidden = YES;
         self.sketchImageView.hidden = YES;
         self.drawingPadView.hidden = NO;
-//        self.jotVC.view.hidden = NO;
+        self.drawHereLabel.hidden = NO;
     } else {
         
         
