@@ -50,6 +50,9 @@
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didRecognizeTapGesture:)];
+    [self.imageDescriptionTextField.superview addGestureRecognizer:tapGesture];
+    
     self.nextPlayerReadyStackView.hidden = YES;
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -88,7 +91,7 @@
     CGRect newFrame = CGRectMake(0, self.view.frame.size.height*0.25, self.view.frame.size.width, self.view.frame.size.height*0.75);
     self.jotVC.view.frame = newFrame;
 
-    self.jotVC.drawingStrokeWidth = 4.f;
+    self.jotVC.drawingStrokeWidth = 6.f;
     
     self.roundCount = 0;
     self.passItOnViewTopConstraint.constant = -1000;
@@ -117,8 +120,10 @@
 - (void)viewDidAppear:(BOOL)animated{
     
 
-//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
+}
 
+- (void)didRecognizeTapGesture:(UITapGestureRecognizer*)gesture {
+    NSLog(@"did tap");
 }
 
 -(void)decrementTimeLabel:(NSTimer *)timer {
@@ -153,11 +158,6 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-
-
-
-
-
 - (void)toggleRoundInterface {
     if (self.roundCount % 2 == 0) {
         //if in a drawing round, hide guessing tools
@@ -167,7 +167,6 @@
         self.drawingPadView.hidden = NO;
         self.drawHereLabel.hidden = NO;
     } else {
-        
         
         //if in a guessing round, hide drawing tools
         self.textBoxLabel.hidden = YES;
@@ -184,8 +183,6 @@
 
 - (IBAction)doneButtonPressed:(UIButton *)sender {
 
-    
-    
     if ((self.roundCount % 2 != 0) && [self.imageDescriptionTextField.text  isEqual: @""]) {
         //alert
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Please enter a guess." message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -193,17 +190,21 @@
         UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
         [alertController addAction:ok];
         
+        [self stopTimer:self.timer];
+        
         [self presentViewController:alertController animated:YES completion:nil];
     } else {
         //proceed
         [self.imageDescriptionTextField resignFirstResponder];
         
+        [self stopTimer:self.timer];
+//        [self resetTimer];
+
+        
         if (self.roundCount < self.totalNumberOfRounds) {
             if (self.roundCount % 2 == 0) {
                 //if in a drawing round
-                
-                //save what is in the drawing pad uiview as a uiimage
-                //but for now just save this
+              
                 UIImage *savedImage = [self.jotVC renderImageWithScale:2.f onColor:self.view.backgroundColor];
                 
                 [self.arrayOfSketchesAndGuesses addObject:savedImage];
@@ -215,7 +216,6 @@
                 
                 //if in a guessing round
                 [self viewDidAppear:true];
-                
                 
                 NSString *guess = self.imageDescriptionTextField.text;
                 [self.arrayOfSketchesAndGuesses addObject:guess];
@@ -240,7 +240,6 @@
                 self.imageDescriptionTextField.text = @"";
                 self.roundCount++;
                 [self toggleRoundInterface];
-                [self stopTimer:self.timer];
                 [self resetTimer];
                 
             }];
@@ -251,8 +250,7 @@
         } else {
             
         }
-        
-        
+//        [self resetTimer];
     }
     
     

@@ -79,9 +79,9 @@
   self.thisRoundsPromptsArray = [[NSMutableArray alloc] init];
   
   
-   self.filmAndTVArray = [NSMutableArray arrayWithObjects: @"Tangled", @"Forrest Gump", @"Spider-Man", @"Inception", @"Rocky", @"Pulp Fiction", @"Fight Club", @"Alice in Wonderland", @"Finding Nemo", @"Space Jam", @"Taken", @"Jaws", @"The Terminator", @"Citizen Kane", @"The Dark Crystal", @"Aladdin", @"Iron Man", @"E.T.", @"Beetlejuice", nil];
+   self.filmAndTVArray = [NSMutableArray arrayWithObjects: @"Tangled", @"Forrest Gump", @"Spider-Man", @"Inception", @"Rocky", @"Pulp Fiction", @"Fight Club", @"Dracula", @"Finding Nemo", @"Space Jam", @"Taken", @"Jaws", @"The Terminator", @"Citizen Kane", @"The Dark Crystal", @"Aladdin", @"Iron Man", @"E.T.", @"Beetlejuice", @"Frankenstein", nil];
    
-   self.peopleArray = [NSMutableArray arrayWithObjects: @"Madonna", @"Beethoven", @"Charlie Chaplin", @"George Washington", @"Chuck Norris", @"Harry Houdini", @"Hillary Clinton", @"Weird Al", @"Albert Einstein", @"Mr. Rogers", @"John Cage", @"Cleopatra", @"Michael Jackson", @"Frank Sinatra", @"Katy Perry", @"Thomas Edison", @"Neil Armstrong", @"Elvis Presley", @"Dr. Seuss", @"Yoko Ono", @"William Shakespeare", @"David Attenborough", nil];
+   self.peopleArray = [NSMutableArray arrayWithObjects: @"Madonna", @"Beethoven", @"Charlie Chaplin", @"George Washington", @"Chuck Norris", @"Harry Houdini", @"Hillary Clinton", @"Weird Al", @"Albert Einstein", @"Mr. Rogers", @"John Cage", @"Cleopatra", @"Michael Jackson", @"Frank Sinatra", @"Katy Perry", @"Thomas Edison", @"Neil Armstrong", @"Elvis Presley", @"Dr. Seuss", @"Yoko Ono", @"Shakespeare", @"Mike Tyson", nil];
    
    self.phrasesArray = [NSMutableArray arrayWithObjects: @"apple of my eye", @"the bee's knees", @"out of this world", @"teacher's pet", @"close but no cigar", @"on the same page", @"peas in a pod", @"scared stiff", @"smarty pants", @"water under the bridge", @"two left feet", @"tie the knot", @"hold your horses", nil];
    

@@ -363,6 +363,9 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
+                                                </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DV-wX-YSf">
                                                 <rect key="frame" x="99.5" y="99.5" width="99.5" height="99.5"/>
@@ -378,6 +381,9 @@
                                                     <mask key="constraints">
                                                         <exclude reference="jIz-F8-uzQ"/>
                                                     </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="numberOfPlayersIncreaseButtonPressed:" destination="T7h-Qb-fKZ" eventType="touchUpInside" id="zMi-ot-Xo0"/>
@@ -397,6 +403,9 @@
                                                     <mask key="constraints">
                                                         <exclude reference="YbF-sR-cm3"/>
                                                     </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="numberOfPlayersDecreaseButtonPressed:" destination="T7h-Qb-fKZ" eventType="touchUpInside" id="8K1-w2-cqB"/>
@@ -439,6 +448,9 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <constraints>
@@ -471,6 +483,9 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <constraints>
@@ -489,6 +504,9 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
+                                                </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFo-xb-nG7">
                                                 <rect key="frame" x="99.5" y="99.5" width="99.5" height="99.5"/>
@@ -504,6 +522,9 @@
                                                     <mask key="constraints">
                                                         <exclude reference="cbL-LW-eGd"/>
                                                     </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="numberOfSecondsInRoundIncreaseButtonPressed:" destination="T7h-Qb-fKZ" eventType="touchUpInside" id="tzx-Pd-RWB"/>
@@ -523,6 +544,9 @@
                                                     <mask key="constraints">
                                                         <exclude reference="YJ8-1F-i0y"/>
                                                     </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="48"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="numberOfSecondsInRoundDecreaseButtonPressed:" destination="T7h-Qb-fKZ" eventType="touchUpInside" id="7Di-AD-fRu"/>
@@ -607,7 +631,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="20" y="36.5" width="70" height="71.5"/>
+                                    <rect key="frame" x="20" y="36" width="70" height="71.5"/>
                                 </variation>
                                 <connections>
                                     <action selector="goBack:" destination="wY1-Yb-Itn" eventType="touchUpInside" id="Ke9-Dd-gyQ"/>
@@ -640,7 +664,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="710" y="36.5" width="70" height="71.5"/>
+                                    <rect key="frame" x="710" y="36" width="70" height="71.5"/>
                                 </variation>
                                 <connections>
                                     <action selector="nextButtonPressed:" destination="T7h-Qb-fKZ" eventType="touchUpInside" id="Rbm-Qg-l5F"/>
@@ -723,6 +747,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="48"/>
                                     <rect key="frame" x="408" y="101" width="372" height="333.5"/>
                                 </variation>
                                 <connections>
@@ -737,6 +762,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="48"/>
                                     <rect key="frame" x="20" y="450" width="372" height="333.5"/>
                                 </variation>
                                 <connections>
@@ -751,6 +777,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="48"/>
                                     <rect key="frame" x="20" y="101" width="372" height="333.5"/>
                                 </variation>
                                 <connections>
@@ -803,6 +830,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="48"/>
                                     <rect key="frame" x="408" y="451" width="372" height="333"/>
                                 </variation>
                                 <connections>
@@ -849,7 +877,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0h-8w-zNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="939"/>
+            <point key="canvasLocation" x="1634" y="1063.5"/>
         </scene>
         <!--Pass It On View Controller-->
         <scene sceneID="JDW-Rv-a65">
@@ -866,7 +894,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KTO-pL-la8">
                                 <rect key="frame" x="20" y="353" width="496" height="144"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Next player ready?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVo-3C-qHu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next player ready?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVo-3C-qHu">
                                         <rect key="frame" x="46" y="0.0" width="404" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="jWx-tW-ng3"/>
@@ -884,8 +912,11 @@
                                                 <exclude reference="jWx-tW-ng3"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
+                                        </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0t-OI-DfQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0t-OI-DfQ">
                                         <rect key="frame" x="124" y="66" width="249" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="gAA-Vn-OYf"/>
@@ -908,6 +939,9 @@
                                                 <exclude reference="gAA-Vn-OYf"/>
                                                 <exclude reference="pu7-TR-wNP"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="48"/>
                                         </variation>
                                         <connections>
                                             <segue destination="8lc-ji-YQ5" kind="show" identifier="StartGamePlay" id="5BP-Qr-COY"/>
@@ -937,6 +971,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
                                     <rect key="frame" x="20" y="378" width="760" height="44"/>
                                 </variation>
                             </label>
@@ -960,7 +995,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72b-E8-8h6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2319" y="939"/>
+            <point key="canvasLocation" x="2319" y="1063.5"/>
         </scene>
         <!--GamePlay-->
         <scene sceneID="HKc-sK-gdv">
@@ -990,6 +1025,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="48"/>
                                     <rect key="frame" x="408" y="101" width="372" height="333.5"/>
                                 </variation>
                                 <connections>
@@ -1004,6 +1040,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="48"/>
                                     <rect key="frame" x="20" y="451" width="372" height="333"/>
                                 </variation>
                                 <connections>
@@ -1027,6 +1064,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="48"/>
                                     <rect key="frame" x="20" y="101" width="372" height="333.5"/>
                                 </variation>
                                 <connections>
@@ -1057,6 +1095,9 @@
                                         <exclude reference="VKz-yJ-ech"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="35" width="94" height="58"/>
+                                </variation>
                                 <connections>
                                     <action selector="goBack:" destination="8NM-oV-yso" eventType="touchUpInside" id="OdB-PS-GHK"/>
                                 </connections>
@@ -1069,6 +1110,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="48"/>
                                     <rect key="frame" x="408" y="451" width="372" height="333.5"/>
                                 </variation>
                                 <connections>
@@ -1170,10 +1212,14 @@
                                     </visualEffectView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohN-VA-km1">
                                         <rect key="frame" x="219" y="8" width="91" height="40"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="42"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="144.5" y="8" width="240" height="61.5"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="42"/>
                                             <rect key="frame" x="300" y="8" width="128" height="33"/>
                                         </variation>
                                     </label>
@@ -1181,9 +1227,13 @@
                                         <rect key="frame" x="8" y="56" width="516" height="488"/>
                                         <string key="text">This game is best experienced with four or more players. First, choose a category and a prompt. Then pass the device to the next player, who will draw a picture of the chosen prompt. (Text is not allowed in a drawing.) They then pass the device to the next player, who enters text guessing what the previous player drew. Continue until each player has either drawn or entered a guess. Game can be played using multiple devices simultaneously.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="38"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="36"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="8" y="77.5" width="512" height="262.5"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="36"/>
                                             <rect key="frame" x="8" y="49" width="712" height="691"/>
                                         </variation>
                                     </textView>
@@ -1217,7 +1267,7 @@
                                     <constraint firstAttribute="width" constant="40" id="sDK-ts-NAm"/>
                                     <constraint firstAttribute="height" constant="40" id="uAJ-iH-STZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="X">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1226,6 +1276,9 @@
                                         <exclude reference="sDK-ts-NAm"/>
                                         <exclude reference="uAJ-iH-STZ"/>
                                     </mask>
+                                </variation>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="521" y="28" width="51" height="51"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="742" y="28" width="30" height="30"/>
@@ -1242,6 +1295,7 @@
                             <constraint firstItem="hvh-V0-LSp" firstAttribute="trailing" secondItem="Trh-1X-NpW" secondAttribute="trailingMargin" constant="-8" id="LUw-n8-uAl"/>
                             <constraint firstItem="eZX-Mg-em7" firstAttribute="leading" secondItem="Trh-1X-NpW" secondAttribute="leadingMargin" constant="16" id="WW8-Xf-fi2"/>
                             <constraint firstItem="j1X-B4-qT4" firstAttribute="width" secondItem="Trh-1X-NpW" secondAttribute="width" id="d9Q-he-KaA"/>
+                            <constraint firstItem="hvh-V0-LSp" firstAttribute="height" secondItem="Trh-1X-NpW" secondAttribute="height" multiplier="0.1" id="kMY-97-BXD"/>
                             <constraint firstItem="eZX-Mg-em7" firstAttribute="top" secondItem="A0s-Rr-vfE" secondAttribute="bottom" constant="16" id="klH-Yu-1TD"/>
                             <constraint firstItem="GdV-bf-qEE" firstAttribute="top" secondItem="eZX-Mg-em7" secondAttribute="bottom" constant="16" id="qpr-mB-7HE"/>
                             <constraint firstItem="j1X-B4-qT4" firstAttribute="height" secondItem="Trh-1X-NpW" secondAttribute="height" id="r8j-hr-bsM"/>
@@ -1249,7 +1303,13 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="kMY-97-BXD"/>
                                 <exclude reference="uG9-qd-if0"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="kMY-97-BXD"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1264,10 +1324,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTj-yd-7J9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="939"/>
+            <point key="canvasLocation" x="942" y="1063.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FfZ-Ot-zQB"/>
+        <segue reference="YRi-cj-0kP"/>
     </inferredMetricsTieBreakers>
 </document>
