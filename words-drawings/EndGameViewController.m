@@ -86,6 +86,10 @@
     
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *identifier = @"Cell";

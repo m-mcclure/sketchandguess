@@ -28,10 +28,10 @@
 
 @property (strong,nonatomic) NSMutableArray *filmAndTVArray;
 @property (strong,nonatomic) NSMutableArray *peopleArray;
-@property (strong,nonatomic) NSMutableArray *idiomsArray;
-@property (strong,nonatomic) NSMutableArray *booksArray;
+@property (strong,nonatomic) NSMutableArray *phrasesArray;
+@property (strong,nonatomic) NSMutableArray *thingsArray;
 @property (strong,nonatomic) NSMutableArray *scienceArray;
-@property (strong,nonatomic) NSMutableArray *geographyArray;
+@property (strong,nonatomic) NSMutableArray *animalsArray;
 @property (strong,nonatomic) NSMutableArray *randomArray;
 
 @property (strong,nonatomic) NSMutableArray *thisRoundsPromptsArray;
@@ -78,20 +78,18 @@
     
   self.thisRoundsPromptsArray = [[NSMutableArray alloc] init];
   
-  NSLog(@"You chose... wisely: %@", self.chosenCategory);
   
-  
-   self.filmAndTVArray = [NSMutableArray arrayWithObjects: @"Tangled", @"Forrest Gump", @"Spider-Man", @"Inception", @"Rocky", @"Rushmore", @"The Goonies", @"Alice in Wonderland", @"Toy Story", @"Space Jam", @"Taken", @"Monsters, Inc.", @"Being John Malkovich", @"Metropolis", @"The Dark Crystal", @"Star Trek", @"Iron Man", @"101 Dalmations", @"Beetlejuice", nil];
+   self.filmAndTVArray = [NSMutableArray arrayWithObjects: @"Tangled", @"Forrest Gump", @"Spider-Man", @"Inception", @"Rocky", @"Pulp Fiction", @"Fight Club", @"Dracula", @"Finding Nemo", @"Space Jam", @"Taken", @"Jaws", @"The Terminator", @"Citizen Kane", @"The Dark Crystal", @"Aladdin", @"Iron Man", @"E.T.", @"Beetlejuice", @"Frankenstein", nil];
    
-   self.peopleArray = [NSMutableArray arrayWithObjects: @"Madonna", @"Beethoven", @"Charlie Chaplin", @"Jim Carrey", @"Henry Ford", @"Houdini", @"Hillary Clinton", @"Weird Al", @"Albert Einstein", @"Mr. Rogers", @"John Cage", @"Cleopatra", @"Michael Jackson", @"Frank Sinatra", @"Katy Perry", @"Thomas Edison", @"Neil Armstrong", @"Elvis", @"Dr. Seuss", @"Linda McCartney", nil];
+   self.peopleArray = [NSMutableArray arrayWithObjects: @"Madonna", @"Beethoven", @"Charlie Chaplin", @"George Washington", @"Chuck Norris", @"Harry Houdini", @"Hillary Clinton", @"Weird Al", @"Albert Einstein", @"Mr. Rogers", @"John Cage", @"Cleopatra", @"Michael Jackson", @"Frank Sinatra", @"Katy Perry", @"Thomas Edison", @"Neil Armstrong", @"Elvis Presley", @"Dr. Seuss", @"Yoko Ono", @"Shakespeare", @"Mike Tyson", nil];
    
-   self.idiomsArray = [NSMutableArray arrayWithObjects: @"apple of my eye", @"the bee's knees", @"out of this world", @"teacher's pet", @"close but no cigar", @"on the same page", @"peas in a pod", @"scared stiff", @"smarty pants", nil];
+   self.phrasesArray = [NSMutableArray arrayWithObjects: @"apple of my eye", @"the bee's knees", @"out of this world", @"teacher's pet", @"close but no cigar", @"on the same page", @"peas in a pod", @"scared stiff", @"smarty pants", @"water under the bridge", @"two left feet", @"tie the knot", @"hold your horses", nil];
    
-   self.booksArray = [NSMutableArray arrayWithObjects: @"The Shining", @"Green Eggs and Ham", @"1984", @"Gone With the Wind", @"White Fang", @"The Hobbit", @"Frankenstein", @"Moby-Dick", nil];
+   self.thingsArray = [NSMutableArray arrayWithObjects: @"flat-screen TV", @"iPad", @"vegetable garden", @"the Eiffel Tower", @"water park", @"art museum", @"degree", @"scarf", @"coffee pot", @"roller coaster", @"DNA helix", @"taxi cab", @"skeleton", nil];
    
-   self.geographyArray = [NSMutableArray arrayWithObjects: @"Paris", @"Antarctica", @"Las Vegas", @"Tokyo", @"Chicago", @"The Nile River", @"China", @"Mexico", @"Pacific Ocean", @"Orlando", @"India", @"Canada", @"Brazil", nil];
+   self.animalsArray = [NSMutableArray arrayWithObjects: @"penguin", @"chimpanzee", @"three-toed sloth", @"hamster", @"pug", @"rock lobster", @"panda", @"great white shark", @"blue whale", @"raccoon", @"iguana", @"T-Rex", @"dolphin", nil];
    
-   self.randomArray = [NSMutableArray arrayWithObjects: @"pirate's booty", @"sushi", @"Bill Murray", @"organ donor", @"wooly mammoth", @"raining cats and dogs", @"white lie", @"Paranoid Android", nil];
+   self.randomArray = [NSMutableArray arrayWithObjects: @"buried treasure", @"sushi", @"Bill Murray", @"organ donor", @"fossil", @"acid rain", @"white lie", @"Paranoid Android", @"your lower intestine", @"guano", @"proton", @"anger", nil];
 
     
   self.chosenCategoryLabel.text = self.chosenCategory;
@@ -102,14 +100,14 @@
     _pickedObjects = _filmAndTVArray;
   } else if ([_chosenCategory isEqualToString:@"People"]){
     _pickedObjects = _peopleArray;
-  } else if ([_chosenCategory isEqualToString:@"Idioms"]){
-    _pickedObjects = _idiomsArray;
-  } else if ([_chosenCategory isEqualToString:@"Books"]){
-    _pickedObjects = _booksArray;
+  } else if ([_chosenCategory isEqualToString:@"Phrases"]){
+    _pickedObjects = _phrasesArray;
+  } else if ([_chosenCategory isEqualToString:@"Things"]){
+    _pickedObjects = _thingsArray;
   } else if ([_chosenCategory isEqualToString:@"SCIENCE"]){
     _pickedObjects = _scienceArray;
-  } else if ([_chosenCategory isEqualToString:@"Geography"]){
-    _pickedObjects = _geographyArray;
+  } else if ([_chosenCategory isEqualToString:@"Animals"]){
+    _pickedObjects = _animalsArray;
   } else if ([_chosenCategory isEqualToString:@"Random"]){
     _pickedObjects = _randomArray;
   }
@@ -185,7 +183,9 @@
   }
 }
 
-
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 
 - (IBAction)goBack:(UIButton *)sender {
   [self.navigationController popViewControllerAnimated:YES];

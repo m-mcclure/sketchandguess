@@ -60,7 +60,7 @@
     NSLog(@"number of players in choose category vc: %ld", (long)self.numberOfPlayers);
   
   _thisRoundsArray = [[NSMutableArray alloc] init];
-  _categoriesArray = [NSMutableArray arrayWithObjects: @"Movies", @"People", @"Idioms", @"Books", @"Geography", @"Random", nil];
+  _categoriesArray = [NSMutableArray arrayWithObjects: @"Movies", @"People", @"Phrases", @"Things", @"Animals", @"Random", nil];
   
   NSInteger j = [_categoriesArray count];
   
@@ -95,6 +95,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 #pragma mark - Navigation

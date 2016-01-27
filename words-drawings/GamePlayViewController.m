@@ -13,7 +13,17 @@
 
 @interface GamePlayViewController ()
 
+@property (weak, nonatomic) NSTimer *timer;
+
+
+
+
 @property (weak, nonatomic) IBOutlet UIView *passItOnView;
+
+@property (weak, nonatomic) IBOutlet UILabel *passItOnLabel;
+@property (weak, nonatomic) IBOutlet UIStackView *nextPlayerReadyStackView;
+
+
 - (IBAction)hidePassItOnView:(UIButton *)sender;
 @property (nonatomic, strong) JotViewController *jotVC;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *passItOnViewTopConstraint;
@@ -27,6 +37,9 @@
 @property NSInteger roundCount;
 @property NSMutableArray *arrayOfSketchesAndGuesses;
 
+@property (weak, nonatomic) IBOutlet UILabel *drawHereLabel;
+
+
 
 @end
 
@@ -34,6 +47,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didRecognizeTapGesture:)];
+    [self.imageDescriptionTextField.superview addGestureRecognizer:tapGesture];
+    
+    self.nextPlayerReadyStackView.hidden = YES;
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.view.bounds;
@@ -71,15 +91,13 @@
     CGRect newFrame = CGRectMake(0, self.view.frame.size.height*0.25, self.view.frame.size.width, self.view.frame.size.height*0.75);
     self.jotVC.view.frame = newFrame;
 
-    self.jotVC.drawingStrokeWidth = 4.f;
+    self.jotVC.drawingStrokeWidth = 6.f;
     
     self.roundCount = 0;
     self.passItOnViewTopConstraint.constant = -1000;
     
     self.arrayOfSketchesAndGuesses = [[NSMutableArray alloc] init];
     
-    //set this for now, later it will come from other vc
-//    self.firstPrompt = @"this is the first prompt";
     
     [self.arrayOfSketchesAndGuesses addObject:self.firstPrompt];
     
@@ -91,13 +109,38 @@
     self.imageDescriptionTextField.hidden = YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-//     if (self.roundCount % 2 == 0) {
-//         self.jotVC.view.hidden = NO;
-//     }
-    
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"yah touch");
+    self.drawHereLabel.hidden = YES;
+
+
 }
 
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+
+}
+
+- (void)didRecognizeTapGesture:(UITapGestureRecognizer*)gesture {
+    NSLog(@"did tap");
+}
+
+-(void)decrementTimeLabel:(NSTimer *)timer {
+    
+    NSInteger newTime = [self.timerLabel.text integerValue] -1;
+    NSString *newTimeString = [NSString stringWithFormat: @"%ld",(long)newTime];
+    self.timerLabel.text = newTimeString;
+    
+    if (newTime == 0) {
+        [timer invalidate];
+        [self timeIsUp];
+    }
+}
+
+-(void)stopTimer:(NSTimer *)timer {
+    [timer invalidate];
+}
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -115,11 +158,6 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-
-
-
-
-
 - (void)toggleRoundInterface {
     if (self.roundCount % 2 == 0) {
         //if in a drawing round, hide guessing tools
@@ -127,23 +165,24 @@
         self.imageDescriptionTextField.hidden = YES;
         self.sketchImageView.hidden = YES;
         self.drawingPadView.hidden = NO;
-//        self.jotVC.view.hidden = NO;
+        self.drawHereLabel.hidden = NO;
     } else {
-        
         
         //if in a guessing round, hide drawing tools
         self.textBoxLabel.hidden = YES;
         self.imageDescriptionTextField.hidden = NO;
         self.sketchImageView.hidden = NO;
         self.drawingPadView.hidden = YES;
-//        self.jotVC.view.hidden = YES;
 
     }
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (IBAction)doneButtonPressed:(UIButton *)sender {
 
-    
     if ((self.roundCount % 2 != 0) && [self.imageDescriptionTextField.text  isEqual: @""]) {
         //alert
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Please enter a guess." message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -151,20 +190,22 @@
         UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
         [alertController addAction:ok];
         
+        [self stopTimer:self.timer];
+        
         [self presentViewController:alertController animated:YES completion:nil];
     } else {
         //proceed
         [self.imageDescriptionTextField resignFirstResponder];
         
+        [self stopTimer:self.timer];
+//        [self resetTimer];
+
+        
         if (self.roundCount < self.totalNumberOfRounds) {
             if (self.roundCount % 2 == 0) {
                 //if in a drawing round
-                
-                //save what is in the drawing pad uiview as a uiimage
-                //but for now just save this
+              
                 UIImage *savedImage = [self.jotVC renderImageWithScale:2.f onColor:self.view.backgroundColor];
-//                [self.jotVC clearAll];
-//                self.jotVC.view.hidden = YES;
                 
                 [self.arrayOfSketchesAndGuesses addObject:savedImage];
                 NSLog(@"array count: %lu", (unsigned long)self.arrayOfSketchesAndGuesses.count);
@@ -175,7 +216,6 @@
                 
                 //if in a guessing round
                 [self viewDidAppear:true];
-                
                 
                 NSString *guess = self.imageDescriptionTextField.text;
                 [self.arrayOfSketchesAndGuesses addObject:guess];
@@ -188,11 +228,19 @@
             [UIView animateWithDuration:0.5 animations:^{
 
                 self.passItOnViewTopConstraint.constant = 0;
+                
+                
+                //do 2 second delay here
+                [self performSelector:@selector(hideAndShowLabels)
+                           withObject:(self)
+                           afterDelay:(2)];
+                
                 [self.passItOnView layoutIfNeeded];
             } completion:^(BOOL finished){
                 self.imageDescriptionTextField.text = @"";
                 self.roundCount++;
                 [self toggleRoundInterface];
+                [self resetTimer];
                 
             }];
             
@@ -202,7 +250,7 @@
         } else {
             
         }
-
+//        [self resetTimer];
     }
     
     
@@ -213,7 +261,10 @@
     
 }
 
-
+- (void)resetTimer {
+    NSString *durationToString = [NSString stringWithFormat: @"%ld", (long)self.durationOfRound];
+    self.timerLabel.text = durationToString;
+}
 
 
  #pragma mark - Navigation
@@ -233,9 +284,16 @@
      }
      
  }
+
+-(void)hideAndShowLabels {
+    self.nextPlayerReadyStackView.hidden = NO;
+    self.passItOnLabel.hidden = YES;
+}
  
 
 - (IBAction)hidePassItOnView:(UIButton *)sender {
+    
+    
     
     [UIView animateWithDuration:0.6 animations:^{
         self.passItOnViewTopConstraint.constant = -1000;
@@ -244,6 +302,11 @@
              self.jotVC.view.hidden = NO;
              
          }
+
+    }completion:^(BOOL finished){
+        self.passItOnLabel.hidden = NO;
+        self.nextPlayerReadyStackView.hidden = YES;
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
     }];
     
 }
