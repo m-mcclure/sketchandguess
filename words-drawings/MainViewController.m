@@ -51,6 +51,10 @@ CGFloat const kInstructionMenuWidthMultiplier = 0.85;
   // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 /*
  #pragma mark - Navigation
  

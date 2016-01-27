@@ -113,6 +113,10 @@ NSInteger numberOfSecondsToIncrease = 10;
   }
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (IBAction)nextButtonPressed:(id)sender {
   NSLog(@"next button was pressed in settingsVC");
 //  [self performSegueWithIdentifier:@"ShowCategories" sender:self];

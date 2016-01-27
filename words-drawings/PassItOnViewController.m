@@ -50,6 +50,10 @@
     
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 -(void)hideAndShowLabels {
     self.nextPlayerReadyStackView.hidden = NO;
     self.passDeviceLabel.hidden = YES;

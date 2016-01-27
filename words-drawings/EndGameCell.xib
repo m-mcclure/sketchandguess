@@ -16,7 +16,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpD-Kz-I6I">
                         <rect key="frame" x="8" y="120" width="329" height="21"/>
                         <color key="backgroundColor" white="0.0" alpha="0.50525323280000001" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="46"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>

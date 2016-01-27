@@ -178,6 +178,10 @@
     }
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (IBAction)doneButtonPressed:(UIButton *)sender {
 
     
