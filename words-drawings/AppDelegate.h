@@ -22,8 +22,6 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-//@property (strong,nonatomic) NSString *seedSentence;
-
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
